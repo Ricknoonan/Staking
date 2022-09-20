@@ -48,7 +48,7 @@ build
 #Hardhat files
 cache
 artifacts
-hardhat.config.js
+packages/hardhat/hardhat.config.js
 
 # misc
 .DS_Store
