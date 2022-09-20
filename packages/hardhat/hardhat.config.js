@@ -1,6 +1,7 @@
 const { utils } = require("ethers");
 const fs = require("fs");
 const chalk = require("chalk");
+require("dotenv").config();
 
 require("@nomiclabs/hardhat-waffle");
 require("@tenderly/hardhat-tenderly");
@@ -28,6 +29,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 const defaultNetwork = "localhost";
 
 const mainnetGwei = 115;
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x";
 
 function mnemonic() {
   try {
@@ -64,11 +66,9 @@ module.exports = {
       },
     },
     kovan: {
-      url: "https://kovan.infura.io/v3/ec6a8acd1d354717acec099ad46a0bab", // <---- YOUR INFURA ID! (or it won't work)
+      url: "https://kovan.infura.io/v3/099603b389024515b90275bedf2c7faa", // <---- YOUR INFURA ID! (or it won't work)
       //    url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXX/eth/kovan", // <---- YOUR MORALIS ID! (not limited to infura)
-      accounts: {
-        mnemonic: mnemonic(),
-      },
+      accounts: [PRIVATE_KEY],
     },
     mainnet: {
       url: "https://mainnet.infura.io/v3/ec6a8acd1d354717acec099ad46a0bab", // <---- YOUR INFURA ID! (or it won't work)
@@ -86,11 +86,9 @@ module.exports = {
       },
     },
     goerli: {
-      url: "https://goerli.infura.io/v3/ec6a8acd1d354717acec099ad46a0bab", // <---- YOUR INFURA ID! (or it won't work)
+      url: "https://goerli.infura.io/v3/099603b389024515b90275bedf2c7faa", // <---- YOUR INFURA ID! (or it won't work)
       //      url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXXXX/eth/goerli", // <---- YOUR MORALIS ID! (not limited to infura)
-      accounts: {
-        mnemonic: mnemonic(),
-      },
+      accounts: [PRIVATE_KEY],
     },
     xdai: {
       url: "https://rpc.xdaichain.com/",
