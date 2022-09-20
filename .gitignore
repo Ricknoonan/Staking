@@ -48,6 +48,7 @@ build
 #Hardhat files
 cache
 artifacts
+hardhat.config.js
 
 # misc
 .DS_Store
@@ -66,4 +67,3 @@ yarn-error.log*
 *.tsbuildinfo
 *.stackdump
 
-hardhat.config.js
